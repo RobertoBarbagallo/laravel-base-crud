@@ -3,14 +3,18 @@
 @section('page_title', 'Create')
 
 @section('content')
+<a href="{{ route('comics.index') }}">Torna alla home</a>
+
+@include("partials.components.errors")
 <form action="{{ route('comics.store') }}" method="post" id="comicform">
     @csrf
 
     <label for="title">Titolo</label>
     <input type="text" name="title" id="title"><br>
 
-    <textarea rows="5" cols="50" name="description" form="comicform" id="decription">
-    Enter description here...</textarea><br>
+    <label for="description">Enter description here...</label>
+    <textarea rows="5" cols="50" name="description" form="comicform" id="description">
+    </textarea><br>
 
     <label for="thumb">Path Immagine</label>
     <input type="text" name="thumb" id="thumb"><br>

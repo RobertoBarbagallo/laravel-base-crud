@@ -4,7 +4,8 @@
 
 @section('content')
 <a href="{{ route('comics.index') }}">Torna alla home</a>
-
+<a href="{{ route('comics.edit', $comic->id) }}">Modifica</a> <br>
+@include('partials.components.deleteBtn', ["id"=> $comic->id])
 <ul>
     <li>ID: {{ $comic->id }}</li>
     <li>TITOLO: {{ $comic->title }}</li>
@@ -12,7 +13,7 @@
     <li>
         <img src="{{$comic->thumb}}" alt="">
     </li>
-    <li>PREZZO: {{ $comic->price }}</li>
+    <li>PREZZO: {{ $comic->price }} $</li>
     <li>TIPOLOGIA: {{ $comic->series }}</li>
     <li>DATA VENDITA: {{ $comic->sale_date }}</li>
     <li>TIPO: {{ $comic->type }}</li>

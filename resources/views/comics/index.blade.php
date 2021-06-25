@@ -5,27 +5,30 @@
 @section('content')
 <a href="{{ route('comics.create') }}">Aggiungi Fumetto...</a>
 <table>
-  <thead>
-    <tr>
-      <th>ID</th>
-      <th>Titolo</th>
-      <th>Prezzo</th>
-      <th></th>
-    </tr>
-  </thead>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Titolo</th>
+            <th>Prezzo</th>
+            <th></th>
+        </tr>
+    </thead>
 
-  <tbody>
-    @foreach($comics as $comic)
-    <tr>
-      <td>{{ $comic->id }}</td>
-      <td>{{ $comic->title }}</td>
-      <td>{{ $comic->price }}</td>
-      <td><a href="{{ route('comics.show', $comic->id) }}">Dettagli...</a></td>
-    </tr>
-    @endforeach
-  </tbody>
+    <tbody>
+        @foreach($comics as $comic)
+        <tr>
+            <td>{{ $comic->id }}</td>
+            <td>{{ $comic->title }}</td>
+            <td>{{ $comic->price }} $</td>
+            <td><a href="{{ route('comics.show', $comic->id) }}">Dettagli...</a>
+                <a href="{{ route('comics.edit', $comic->id) }}">Modifica</a>
+                @include('partials.components.deleteBtn', ["id" => $comic->id])
+            </td>
+        </tr>
+        @endforeach
+    </tbody>
 
 </table>
 
-    
+
 @endsection

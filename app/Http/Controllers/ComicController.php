@@ -44,8 +44,8 @@ class ComicController extends Controller
 
         $request->validate([
             "title"=> "required|max:255| unique:comics",
-            "description"=> "required|alpha_dash",
-            "thumb"=> "required|image",
+            "description"=> "required|min:3|max:1000",
+            "thumb"=> "required|url",
             "price" => "required|numeric",
             "series" => "required|max:255",
             "sale_date" => "required|date",

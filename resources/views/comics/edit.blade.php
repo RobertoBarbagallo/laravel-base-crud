@@ -23,7 +23,7 @@
       </textarea><br>
 
       <label for="thumb">Path Immagine</label>
-      <input type="text" name="thumb" id="thumb" value="{{old('thumb',  $comic->thumb)}}"><mic->thumb br>
+      <input type="text" name="thumb" id="thumb" value="{{old('thumb',  $comic->thumb)}}"><br>
 
 
       <label for="price">Prezzo</label>

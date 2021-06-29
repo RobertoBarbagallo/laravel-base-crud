@@ -5,6 +5,7 @@
 @section('content')
 <a href="{{ route('comics.create') }}">Aggiungi Fumetto...</a>
 <table>
+
     <thead>
         <tr>
             <th>ID</th>

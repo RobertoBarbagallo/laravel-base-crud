@@ -16,7 +16,6 @@ class CreateComicsTable extends Migration
         Schema::create('comics', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->rememberToken();
             $table->string('title');
             $table->longText('description');
             $table->char('thumb');
